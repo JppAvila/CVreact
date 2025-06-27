@@ -56,6 +56,13 @@ export default function ContactoFlotante({ onClose }) {
                 required
                 className="w-full px-4 py-2 border rounded-md"
               />
+              <input
+                type="text"
+                name="_subject"
+                placeholder="Asunto"
+                required
+                className="w-full px-4 py-2 border rounded-md"
+              />
               <textarea
                 name="mensaje"
                 placeholder="Escribe tu mensaje..."
