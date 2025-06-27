@@ -4,6 +4,9 @@ import PropTypes from "prop-types";
 
 export default function ContactoFlotante({ onClose }) {
   const [formSent, setFormSent] = useState(false);
+  const formAction =
+    import.meta.env.VITE_FORM_ENDPOINT ||
+    "https://formsubmit.co/juanppa86@gmail.com";
 
   useEffect(() => {
     if (formSent) {
@@ -28,7 +31,7 @@ export default function ContactoFlotante({ onClose }) {
           <>
             <h2 className="text-2xl font-bold mb-4">¿Hablamos?</h2>
             <form
-              action={import.meta.env.VITE_FORM_ENDPOINT}
+              action={formAction}
               method="POST"
               onSubmit={() => setFormSent(true)}
               className="space-y-4"
