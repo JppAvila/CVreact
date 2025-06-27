@@ -11,7 +11,7 @@ export default function Header() {
     <>
       {showContact && <ContactoFlotante onClose={() => setShowContact(false)} />}
 
-      <div className="fixed top-4 right-4 z-50 flex flex-col sm:flex-row gap-2 sm:gap-3 items-end sm:items-center">
+      <div className="absolute top-4 right-4 z-10 flex flex-col sm:flex-row gap-2 sm:gap-3 items-end sm:items-center">
         <a
           href="https://www.linkedin.com/in/juan-pablo-palomares-ávila-07aaab205"
           target="_blank"
