@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { FaGraduationCap, FaEgg, FaTimes } from "react-icons/fa";
+import FormacionComplementaria from "./FormacionComplementaria";
 
 export default function SkillsSection() {
   const [showEgg, setShowEgg] = useState(false);
+  const [showFormacion, setShowFormacion] = useState(false);
 
   return (
     <section className="relative bg-white py-20 px-6">
@@ -11,7 +13,10 @@ export default function SkillsSection() {
           <h2 className="text-3xl font-bold border-b-2 border-gray-300 inline-block">
             HABILIDADES TÉCNICAS
           </h2>
-          <button className="border border-gray-600 px-4 py-2 rounded-md flex items-center gap-2 hover:scale-105 transition">
+          <button
+            onClick={() => setShowFormacion(true)}
+            className="border border-gray-600 px-4 py-2 rounded-md flex items-center gap-2 hover:scale-105 transition"
+          >
             <FaGraduationCap />
             Formación Complementaria
           </button>
@@ -68,6 +73,14 @@ export default function SkillsSection() {
           </div>
         </div>
       </div>
+
+      {showFormacion && (
+        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/50">
+          <div className="bg-white rounded-xl p-6 shadow-2xl max-w-xl w-full relative">
+            <FormacionComplementaria onClose={() => setShowFormacion(false)} />
+          </div>
+        </div>
+      )}
 
       {/* Easter Egg Button */}
       <button
