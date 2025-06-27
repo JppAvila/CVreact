@@ -18,6 +18,7 @@ export default function FormacionComplementaria({ onClose }) {
         <button
           onClick={onClose}
           className="text-gray-500 hover:text-red-500 text-2xl transition"
+          aria-label="Cerrar modal"
         >
           <FaTimes />
         </button>
