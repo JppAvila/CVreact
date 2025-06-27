@@ -17,4 +17,17 @@ describe('SkillsSection modal', () => {
 
     expect(screen.queryByRole('heading', { name: /formaci\u00f3n complementaria/i })).toBeNull();
   });
+
+  test('modal closes when clicking the overlay', async () => {
+    render(<SkillsSection />);
+    const openButton = screen.getByRole('button', { name: /formaci\u00f3n complementaria/i });
+    await userEvent.click(openButton);
+
+    const dialog = await screen.findByRole('dialog');
+    expect(dialog).toBeInTheDocument();
+
+    await userEvent.click(dialog);
+
+    expect(screen.queryByRole('dialog')).toBeNull();
+  });
 });

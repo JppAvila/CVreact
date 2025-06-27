@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaGraduationCap, FaEgg, FaTimes } from "react-icons/fa";
 import FormacionComplementaria from "./FormacionComplementaria";
+import Modal from "./Modal";
 
 export default function SkillsSection() {
   const [showEgg, setShowEgg] = useState(false);
@@ -77,11 +78,9 @@ export default function SkillsSection() {
 
       {/* Formacion Complementaria Modal */}
       {showFormacion && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="bg-white text-gray-800 p-6 rounded-xl max-w-md shadow-lg relative">
-            <FormacionComplementaria onClose={() => setShowFormacion(false)} />
-          </div>
-        </div>
+        <Modal onClose={() => setShowFormacion(false)}>
+          <FormacionComplementaria onClose={() => setShowFormacion(false)} />
+        </Modal>
       )}
 
       {/* Easter Egg Button */}
