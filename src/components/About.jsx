@@ -86,7 +86,7 @@ export default function About() {
               <li><strong>Modal:</strong> Diploma en modal con fondo oscuro y botón de cierre</li>
               <li><strong>Animaciones:</strong> fadeIn en sección y modal (`fadeInScale`)</li>
               <li><strong>Iconos:</strong> `FaGraduationCap`, `FaTimes`, `FaEgg` desde `react-icons`</li>
-              <li><strong>Imágenes usadas:</strong> `profile.png`, `diploma-dam-camara.png`</li>
+              <li><strong>Imágenes usadas:</strong> `profile.png`, `diploma.png`</li>
             </ul>
           </div>
         </div>

@@ -118,7 +118,6 @@ export default function ExperienceSlider() {
               <li><strong>React:</strong> Componente funcional con estado `useState`</li>
               <li><strong>Tailwind CSS:</strong> Estilos utilitarios para estructura y diseño responsive</li>
               <li><strong>Swiper:</strong> Slider animado con navegación, paginación y loop</li>
-              <li><strong>Framer Motion:</strong> Transiciones y animaciones </li>
               <li><strong>Modularización:</strong> Proyectos destacados está separado en su propio componente</li>
               <li><strong>Easter Egg:</strong> Botón escondido que muestra info técnica como esta 😉</li>
             </ul>
