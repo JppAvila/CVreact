@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FaGraduationCap, FaEgg, FaTimes } from "react-icons/fa";
 import FormacionComplementaria from "./FormacionComplementaria";
-import Modal from "./Modal";
 
 export default function SkillsSection() {
   const [showEgg, setShowEgg] = useState(false);
@@ -78,9 +77,7 @@ export default function SkillsSection() {
 
       {/* Formacion Complementaria Modal */}
       {showFormacion && (
-        <Modal onClose={() => setShowFormacion(false)}>
-          <FormacionComplementaria onClose={() => setShowFormacion(false)} />
-        </Modal>
+        <FormacionComplementaria onClose={() => setShowFormacion(false)} />
       )}
 
       {/* Easter Egg Button */}
@@ -104,11 +101,13 @@ export default function SkillsSection() {
             </button>
             <h3 className="text-xl font-bold mb-2">🥚 ¿Cómo está hecho este componente?</h3>
             <ul className="text-sm list-disc pl-5 space-y-1">
-              <li><strong>React:</strong> Componente funcional simple con `useState`</li>
-              <li><strong>Tailwind CSS:</strong> Sistema de diseño utilitario para layout, espaciado, colores</li>
-              <li><strong>Diseño:</strong> Grid responsiva y clases semánticas para dividir columnas</li>
+              <li><strong>React:</strong> Componente funcional con `useState` para gestionar modales</li>
+              <li><strong>Tailwind CSS:</strong> Estilos utilitarios y diseño responsive</li>
+              <li>
+                <strong>Ventanas modales:</strong> Formación Complementaria se abre con el mismo diseño que Proyectos Destacados
+              </li>
               <li><strong>Iconos:</strong> `react-icons` para representar tecnologías</li>
-              <li><strong>Easter Egg:</strong> Botón absoluto, modal informativo sobre construcción técnica</li>
+              <li><strong>Easter Egg:</strong> Botón flotante que muestra esta explicación</li>
             </ul>
           </div>
         </div>

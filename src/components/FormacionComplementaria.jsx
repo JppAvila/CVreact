@@ -12,29 +12,32 @@ const cursos = [
 
 export default function FormacionComplementaria({ onClose }) {
   return (
-    <div className="text-gray-800">
-      <div className="flex justify-between items-center mb-6 border-b pb-2">
-        <h3 className="text-3xl font-bold">🎓 Formación Complementaria</h3>
+    <div className="fixed inset-0 z-30 flex items-center justify-center p-4 bg-black/10 backdrop-blur-sm">
+      <div className="relative bg-white max-w-3xl w-full rounded-xl shadow-2xl border border-gray-300 px-6 py-8 animate-fadeInScale text-gray-800">
         <button
           onClick={onClose}
-          className="text-gray-500 hover:text-red-500 text-2xl transition"
+          className="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-xl"
         >
           <FaTimes />
         </button>
-      </div>
+        <div className="flex items-center gap-2 mb-6 border-b pb-2">
+          <FaBook className="text-blue-600 text-2xl" />
+          <h3 className="text-2xl font-bold">Formación Complementaria</h3>
+        </div>
 
-      <div className="space-y-4">
-        {cursos.map((curso, i) => (
-          <div
-            key={i}
-            className="flex items-start gap-3 p-4 rounded-md bg-gray-50 border border-gray-200 shadow-sm hover:shadow-md transition"
-          >
-            <div className="text-blue-600 text-xl mt-1">
-              <FaBook />
+        <div className="space-y-4">
+          {cursos.map((curso, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-3 p-4 rounded-md bg-gray-50 border border-gray-200 shadow-sm hover:shadow-md transition"
+            >
+              <div className="text-blue-600 text-xl mt-1">
+                <FaBook />
+              </div>
+              <p className="text-base">{curso}</p>
             </div>
-            <p className="text-base">{curso}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
