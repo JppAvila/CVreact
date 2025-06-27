@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 export default function ContactoFlotante({ onClose }) {
   const [formSent, setFormSent] = useState(false);
@@ -27,7 +28,7 @@ export default function ContactoFlotante({ onClose }) {
           <>
             <h2 className="text-2xl font-bold mb-4">¿Hablamos?</h2>
             <form
-              action="https://formsubmit.co/juanppa86@gmail.com"
+              action={import.meta.env.VITE_FORM_ENDPOINT}
               method="POST"
               onSubmit={() => setFormSent(true)}
               className="space-y-4"
@@ -77,3 +78,7 @@ export default function ContactoFlotante({ onClose }) {
     </div>
   );
 }
+
+ContactoFlotante.propTypes = {
+  onClose: PropTypes.func.isRequired,
+};
