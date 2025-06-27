@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaEgg, FaGraduationCap } from "react-icons/fa";
+import { FaEgg, FaGraduationCap, FaTimes } from "react-icons/fa";
 import PropTypes from "prop-types";
 import Modal from "./Modal";
 import diploma from "../assets/images/diploma.png";
