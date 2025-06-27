@@ -74,6 +74,7 @@ export default function SkillsSection() {
         </div>
       </div>
 
+
       {/* Formacion Complementaria Modal */}
       {showFormacion && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
