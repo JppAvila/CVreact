@@ -56,15 +56,15 @@ export default function ExperienceSlider() {
 
   return (
     <section className="bg-gray-100 py-16 px-6 relative">
-      <div className="max-w-5xl mx-auto relative">
-        <div className="flex justify-between items-center mb-10">
-          <h2 className="text-3xl font-bold text-center w-full">Experiencia Profesional</h2>
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-10">
+          <h2 className="text-3xl font-bold text-center md:text-left w-full">Experiencia Profesional</h2>
           <button
             onClick={() => setShowProjects(true)}
-            className="absolute right-0 top-0 bg-black text-white px-4 py-2 rounded-md text-sm flex items-center gap-2 hover:bg-gray-800 transition"
+            className="bg-black text-white px-4 py-2 rounded-md text-sm flex items-center gap-2 hover:bg-gray-800 transition self-center md:self-auto"
           >
             <FaProjectDiagram />
-            Proyectos Destacados
+            Proyectos Destacados ✨
           </button>
         </div>
 
