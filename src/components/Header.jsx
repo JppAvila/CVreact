@@ -31,7 +31,7 @@ export default function Header() {
         </button>
 
         <a
-          href="/cv-juanpablo.pdf"
+          href={`${import.meta.env.BASE_URL}cv-juanpablo.pdf`}
           download
           className="flex items-center gap-2 px-3 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-md text-sm font-medium transition shadow-lg"
         >
