@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
-import { FaTimes, FaEgg, FaGraduationCap } from "react-icons/fa";
+import { useState } from "react";
+import { FaEgg, FaGraduationCap } from "react-icons/fa";
+import PropTypes from "prop-types";
+import Modal from "./Modal";
 import diploma from "../assets/images/diploma.png";
 import profile from "../assets/images/profile.png";
 
@@ -7,13 +9,7 @@ export default function About() {
   const [showDiploma, setShowDiploma] = useState(false);
   const [showEgg, setShowEgg] = useState(false);
 
-  useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === "Escape") setShowDiploma(false);
-    };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
+
 
   return (
     <section className="bg-white py-16 px-6 relative animate-fadeIn">
@@ -45,21 +41,13 @@ export default function About() {
       </div>
 
       {showDiploma && (
-        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center">
-          <div className="relative bg-white rounded-lg p-4 max-w-2xl w-full flex flex-col items-center animate-fadeInScale">
-            <button
-              className="absolute top-2 right-2 text-xl text-gray-600 hover:text-red-500"
-              onClick={() => setShowDiploma(false)}
-            >
-              <FaTimes />
-            </button>
-            <img
-              src={diploma}
-              alt="Diploma DAM Cámara de Comercio"
-              className="rounded-lg w-full max-w-[400px] mx-auto shadow-xl border border-gray-200"
-            />
-          </div>
-        </div>
+        <Modal onClose={() => setShowDiploma(false)}>
+          <img
+            src={diploma}
+            alt="Diploma DAM Cámara de Comercio"
+            className="rounded-lg w-full max-w-[400px] mx-auto shadow-xl border border-gray-200"
+          />
+        </Modal>
       )}
 
       <button
