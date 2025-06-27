@@ -74,9 +74,11 @@ export default function SkillsSection() {
         </div>
       </div>
 
+
+      {/* Formacion Complementaria Modal */}
       {showFormacion && (
-        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/50">
-          <div className="bg-white rounded-xl p-6 shadow-2xl max-w-xl w-full relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="bg-white text-gray-800 p-6 rounded-xl max-w-md shadow-lg relative">
             <FormacionComplementaria onClose={() => setShowFormacion(false)} />
           </div>
         </div>
