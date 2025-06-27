@@ -1,4 +1,9 @@
 import { FaTimes, FaBook } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const cursos = [
   "Desarrollo Web Completo con HTML5, CSS3, JS, AJAX, PHP y MySQL – UDEMY",
@@ -11,9 +16,14 @@ const cursos = [
 ];
 
 export default function FormacionComplementaria({ onClose }) {
+  const cursoPairs = [];
+  for (let i = 0; i < cursos.length; i += 2) {
+    cursoPairs.push(cursos.slice(i, i + 2));
+  }
+
   return (
     <div className="fixed inset-0 z-30 flex items-center justify-center p-4 bg-black/10 backdrop-blur-sm">
-      <div className="relative bg-white max-w-3xl w-full rounded-xl shadow-2xl border border-gray-300 px-6 py-8 animate-fadeInScale text-gray-800">
+      <div className="relative bg-white max-w-md w-full rounded-xl shadow-2xl border border-gray-300 px-6 py-8 animate-fadeInScale text-gray-800">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-xl"
@@ -25,19 +35,31 @@ export default function FormacionComplementaria({ onClose }) {
           <h3 className="text-2xl font-bold">Formación Complementaria</h3>
         </div>
 
-        <div className="space-y-4">
-          {cursos.map((curso, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-3 p-4 rounded-md bg-gray-50 border border-gray-200 shadow-sm hover:shadow-md transition"
-            >
-              <div className="text-blue-600 text-xl mt-1">
-                <FaBook />
+        <Swiper
+          modules={[Navigation, Pagination]}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          className="pb-6"
+        >
+          {cursoPairs.map((pair, idx) => (
+            <SwiperSlide key={idx}>
+              <div className="space-y-4">
+                {pair.map((curso, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-3 p-4 rounded-md bg-gray-50 border border-gray-200 shadow-sm hover:shadow-md transition"
+                  >
+                    <div className="text-blue-600 text-xl mt-1">
+                      <FaBook />
+                    </div>
+                    <p className="text-base">{curso}</p>
+                  </div>
+                ))}
               </div>
-              <p className="text-base">{curso}</p>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </div>
   );
