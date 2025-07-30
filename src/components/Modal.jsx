@@ -17,18 +17,20 @@ export default function Modal({ onClose, children }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
       onClick={handleOverlayClick}
       role="dialog"
     >
-      <div className="relative bg-white text-gray-800 p-6 rounded-xl shadow-lg animate-fadeInScale max-w-md w-full">
+      <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 text-white p-8 rounded-2xl shadow-2xl animate-fadeInScale max-w-lg w-full mx-4">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl"
+          className="absolute top-4 right-4 text-gray-400 hover:text-red-400 text-xl transition-colors hover:scale-110 duration-200"
         >
           <FaTimes />
         </button>
-        {children}
+        <div className="mt-4">
+          {children}
+        </div>
       </div>
     </div>
   );
