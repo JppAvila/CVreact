@@ -12,7 +12,8 @@ describe('About modal', () => {
     const img = await screen.findByAltText(/diploma dam c\u00e1mara de comercio/i);
     expect(img).toBeInTheDocument();
 
-    const closeButton = within(img.parentElement).getByRole('button');
+    const dialog = await screen.findByRole('dialog');
+    const closeButton = within(dialog).getByRole('button');
     await userEvent.click(closeButton);
 
     expect(screen.queryByAltText(/diploma dam c\u00e1mara de comercio/i)).toBeNull();

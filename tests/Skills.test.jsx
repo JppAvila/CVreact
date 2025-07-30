@@ -12,7 +12,8 @@ describe('SkillsSection modal', () => {
     const heading = await screen.findByRole('heading', { name: /formaci\u00f3n complementaria/i });
     expect(heading).toBeInTheDocument();
 
-    const closeButton = within(heading.parentElement).getByRole('button');
+    const dialog = await screen.findByRole('dialog');
+    const closeButton = within(dialog).getByRole('button');
     await userEvent.click(closeButton);
 
     expect(screen.queryByRole('heading', { name: /formaci\u00f3n complementaria/i })).toBeNull();
