@@ -11,6 +11,7 @@ import {
   FaGitAlt,
   FaProjectDiagram,
   FaRobot,
+  FaCogs,
   FaUserShield,
   FaTachometerAlt,
   FaCode,
@@ -36,7 +37,6 @@ import {
   SiNginx,
   SiJira,
   SiNotion,
-  SiGithubcopilot,
   SiOpenai,
 } from "react-icons/si";
 import FormacionComplementaria from "./FormacionComplementaria";
@@ -251,7 +251,7 @@ export default function SkillsSection() {
               </h3>
               <ul className="space-y-2 text-base">
                 <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiGithubcopilot className="text-xl" />
+                  <FaRobot className="text-xl" />
                   <span>GitHub Copilot</span>
                 </li>
                 <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
@@ -259,7 +259,7 @@ export default function SkillsSection() {
                   <span>ChatGPT / Claude / Codex</span>
                 </li>
                 <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaRobot className="text-xl" />
+                  <FaCogs className="text-xl" />
                   <span>Automatización con IA</span>
                 </li>
               </ul>
