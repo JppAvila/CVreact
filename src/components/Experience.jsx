@@ -191,19 +191,21 @@ export default function ExperienceSlider() {
         </div>
       )}
 
-      <style jsx>{`
-        .swiper-pagination-bullet-custom {
-          width: 12px;
-          height: 12px;
-          background: rgba(59, 130, 246, 0.5);
-          border-radius: 50%;
-          transition: all 0.3s ease;
-        }
-        .swiper-pagination-bullet-active-custom {
-          background: linear-gradient(45deg, #06b6d4, #3b82f6);
-          transform: scale(1.2);
-        }
-      `}</style>
+      <style>
+  {`
+    .swiper-pagination-bullet-custom {
+      width: 12px;
+      height: 12px;
+      background: rgba(59, 130, 246, 0.5);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    .swiper-pagination-bullet-active-custom {
+      background: linear-gradient(45deg, #06b6d4, #3b82f6);
+      transform: scale(1.2);
+    }
+  `}
+</style>
     </section>
   );
 }
