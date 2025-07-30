@@ -22,7 +22,7 @@ export default function FormacionComplementaria({ onClose }) {
   }
 
   return (
-    <div className="fixed inset-0 z-30 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-30 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" role="dialog">
       <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 max-w-2xl w-full rounded-2xl px-8 py-10 shadow-2xl animate-fadeInScale">
         <button
           onClick={onClose}
