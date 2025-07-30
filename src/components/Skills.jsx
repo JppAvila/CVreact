@@ -56,7 +56,7 @@ export default function SkillsSection() {
 
       <div className="relative max-w-7xl mx-auto z-10">
         <div className="mb-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <h2 className="text-4xl font-black bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 bg-clip-text text-transparent border-b-4 border-gradient-to-r from-cyan-500 to-purple-500 inline-block pb-2">
+          <h2 className="text-4xl font-black bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 bg-clip-text text-transparent border-b-4 border-gradient-to-r inline-block pb-2">
             HABILIDADES TÉCNICAS
           </h2>
           <button

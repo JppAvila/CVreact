@@ -1,6 +1,3 @@
 /// <reference types="vite/client" />
 
-declare module "*.png" {
-  const value: string;
-  export default value;
-}
+// Removed custom "*.png" module declaration to avoid duplicate identifier error.
