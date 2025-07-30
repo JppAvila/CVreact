@@ -186,7 +186,7 @@ export default function FlowTask() {
                   </li>
                   <li className="flex items-start gap-3 text-gray-300 text-sm">
                     <CheckCircle size={16} className="text-green-400 mt-1 flex-shrink-0" />
-                    <span className="font-medium">Auditar cambios y fichajes</span>
+                    <span className="font-medium">Auditar cambios</span>
                   </li>
                 </ul>
               </div>
@@ -352,7 +352,7 @@ export default function FlowTask() {
               <ul className="space-y-4 text-gray-300">
                 <li><strong className="text-green-400">Firebase:</strong> <span className="font-medium text-sm">Autenticación, roles, permisos, base de datos NoSQL y control de acceso en tiempo real.</span></li>
                 <li><strong className="text-green-400">Node.js + Express:</strong> <span className="font-medium text-sm">Backend personalizado con lógica de negocio conectada a producción.</span></li>
-                <li><strong className="text-green-400">Oracle Database:</strong> <span className="font-medium text-sm">Acceso a la base de datos de fichajes real de la empresa mediante SQL y procedimientos seguros.</span></li>
+                <li><strong className="text-green-400">Oracle Database:</strong> <span className="font-medium text-sm">Acceso a la base de datos de oracle por api mediante SQL y procedimientos seguros.</span></li>
                 <li><strong className="text-green-400">Custom Hooks + Zustand:</strong> <span className="font-medium text-sm">Gestión de estado global limpia y escalable, sin boilerplate.</span></li>
               </ul>
             </div>
@@ -402,7 +402,7 @@ export default function FlowTask() {
           <div className="text-center">
             <p className="text-lg text-gray-300 font-medium leading-relaxed">
               Toda la solución está pensada para ser escalable, eficiente, y completamente integrada al flujo de trabajo real de una empresa en producción, 
-              incluyendo dashboards diferenciados por rol, fichajes conectados a Oracle, y control total de tareas semanales.
+              incluyendo dashboards diferenciados por rol, y control total de tareas semanales.
             </p>
           </div>
         </div>
