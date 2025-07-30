@@ -40,23 +40,15 @@ export default function Header() {
           <span className="hidden sm:inline">Descargar CV</span>
         </a>
 
-        {/* Nuevo botón FlowTask */}
-        <a
-          href="/flowtask"
-          className="group flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-xl text-sm font-bold transition-all duration-300 shadow-2xl hover:shadow-orange-500/25 hover:scale-105 backdrop-blur-xl border border-orange-400/20"
-        >
-          <FaRocket className="text-orange-200 group-hover:text-white transition-colors" />
-          <span className="hidden sm:inline">FlowTask</span>
-        </a>
       </div>
 
       {/* Hero Section - Diseño moderno, texto original */}
-      <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white py-20 px-6 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white py-32 px-6 overflow-hidden">
         {/* Elementos de fondo animados */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute top-40 right-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+            <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
           
           {/* Grid pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
@@ -96,7 +88,7 @@ export default function Header() {
         {/* Easter Egg Button */}
         <button
           onClick={() => setShowEgg(true)}
-          className="absolute bottom-6 right-6 bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black px-4 py-3 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 hover:shadow-yellow-500/25"
+          className="absolute bottom-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black px-4 py-3 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 hover:shadow-yellow-500/25"
           title="Easter Egg"
         >
           <FaEgg className="text-lg" />
