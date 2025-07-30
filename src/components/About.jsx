@@ -40,7 +40,7 @@ export default function About() {
             </button>
             
             <a
-              href="/flowtask"
+              href={`${import.meta.env.BASE_URL}flowtask`}
               className="group relative overflow-hidden flex items-center justify-center gap-3 px-5 py-3 bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 hover:from-orange-600 hover:via-red-600 hover:to-orange-600 text-white rounded-xl font-bold transition-all duration-300 shadow-xl hover:shadow-orange-500/30 hover:scale-105 border border-orange-400/20"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>

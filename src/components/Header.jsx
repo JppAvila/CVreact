@@ -40,14 +40,6 @@ export default function Header() {
           <span className="hidden sm:inline">Descargar CV</span>
         </a>
 
-        {/* Nuevo botón FlowTask */}
-        <a
-          href="/flowtask"
-          className="group flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-xl text-sm font-bold transition-all duration-300 shadow-2xl hover:shadow-orange-500/25 hover:scale-105 backdrop-blur-xl border border-orange-400/20"
-        >
-          <FaRocket className="text-orange-200 group-hover:text-white transition-colors" />
-          <span className="hidden sm:inline">FlowTask</span>
-        </a>
       </div>
 
       {/* Hero Section - Diseño moderno, texto original */}
