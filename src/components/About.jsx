@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { FaEgg, FaGraduationCap, FaTimes, FaRocket } from "react-icons/fa";
-import PropTypes from "prop-types";
 import Modal from "./Modal";
 import diploma from "../assets/images/diploma.png";
 import profile from "../assets/images/profile.png";
 import { Link } from "react-router-dom";
+import { cvData } from "../data/cvData";
 
 export default function About() {
   const [showDiploma, setShowDiploma] = useState(false);
   const [showEgg, setShowEgg] = useState(false);
+  const { hero } = cvData;
 
   return (
     <section className="relative bg-gradient-to-br from-slate-800 via-gray-900 to-slate-800 py-16 px-6 animate-fadeIn overflow-hidden">
@@ -59,27 +60,7 @@ export default function About() {
 
           <div className="space-y-5 text-gray-300 text-base leading-relaxed">
             <p className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-xl border border-gray-600/20 rounded-2xl p-5 shadow-xl">
-              Soy programador con experiencia en desarrollo de software,
-              análisis y resolución de incidencias en producción. Me dedico a
-              personalizar soluciones para clientes, optimizar procesos internos
-              y revisar código para mejorar la calidad y eficiencia del equipo.
-              Además de programar, superviso y guío a programadores junior,
-              ayudándolos a mejorar técnicamente. Me gusta encontrar soluciones
-              rápidas y efectivas a problemas complejos, evitando complicaciones
-              innecesarias.
-            </p>
-
-            <p className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-xl border border-gray-600/20 rounded-2xl p-5 shadow-xl">
-              Fuera del ámbito tecnológico, llevo más de quince años entrenando
-              equipos de baloncesto, en su mayoría femeninos, desde categorías
-              base hasta senior. Actualmente soy entrenador principal de un
-              equipo de Primera Nacional Femenina, donde combino desarrollo
-              técnico, gestión de grupo y preparación competitiva. A lo largo de
-              mi trayectoria he participado en numerosos Campeonatos de
-              Andalucía y he logrado varios títulos de liga, formando jugadoras
-              que no solo han crecido deportivamente, sino también como
-              personas. Mi experiencia en pista refuerza mi capacidad para
-              liderar, comunicar y mantener la calma bajo presión.
+              {hero.bio}
             </p>
           </div>
         </div>
@@ -123,7 +104,7 @@ export default function About() {
                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
                 <div>
                   <strong className="text-blue-400">React:</strong> Componente
-                  funcional con estado (`useState`, `useEffect`)
+                  funcional con estado (`useState`)
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -154,11 +135,11 @@ export default function About() {
                   `FaGraduationCap`, `FaTimes`, `FaEgg` desde `react-icons`
                 </div>
               </li>
-              <li className="flex items-start gap-3">
+               <li className="flex items-start gap-3">
                 <span className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></span>
                 <div>
-                  <strong className="text-yellow-400">Imágenes usadas:</strong>{" "}
-                  `profile.png`, `diploma-dam-camara.png`
+                  <strong className="text-yellow-400">Datos Dinámicos:</strong>{" "}
+                  Bio cargada desde `cvData.js`
                 </div>
               </li>
             </ul>

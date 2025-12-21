@@ -1,4 +1,8 @@
+import { cvData } from "../data/cvData";
+
 export default function Contact() {
+  const { contact } = cvData.hero;
+
   return (
     <section className="relative bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 py-16 px-6 overflow-hidden">
       {/* Elementos de fondo */}
@@ -21,7 +25,7 @@ export default function Contact() {
               </svg>
             </div>
             <p className="text-base font-bold text-white mb-2">Email:</p>
-            <p className="text-cyan-300 text-base">juan.pablo.palomares@gmail.com</p>
+            <p className="text-cyan-300 text-base break-words">{contact.email}</p>
           </div>
 
           {/* Teléfono */}
@@ -32,7 +36,7 @@ export default function Contact() {
               </svg>
             </div>
             <p className="text-base font-bold text-white mb-2">Teléfono:</p>
-            <p className="text-purple-300 text-base">+34 678 999 000</p>
+            <p className="text-purple-300 text-base">{contact.phone}</p>
           </div>
 
           {/* Ubicación */}
@@ -44,7 +48,7 @@ export default function Contact() {
               </svg>
             </div>
             <p className="text-base font-bold text-white mb-2">Ubicación:</p>
-            <p className="text-green-300 text-base">Sevilla, España</p>
+            <p className="text-green-300 text-base">{contact.location}</p>
           </div>
         </div>
       </div>

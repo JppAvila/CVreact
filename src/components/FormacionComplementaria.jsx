@@ -4,18 +4,11 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-const cursos = [
-  "Desarrollo Web Completo con HTML5, CSS3, JS, AJAX, PHP y MySQL – UDEMY",
-  "JavaScript Moderno – Guía Definitiva (Construcción de +20 Proyectos) – UDEMY",
-  "Curso de Linux – Todo lo necesario para ser administrador – UDEMY",
-  "Spring Boot y Microservicios",
-  "Testing en Java con JUnit 5",
-  "Docker y CI/CD para desarrolladores",
-  "Refactoring y Clean Code",
-];
+import { cvData } from "../data/cvData";
 
 export default function FormacionComplementaria({ onClose }) {
+  const cursos = cvData.complementaryEducation;
+  
   const cursoPairs = [];
   for (let i = 0; i < cursos.length; i += 2) {
     cursoPairs.push(cursos.slice(i, i + 2));

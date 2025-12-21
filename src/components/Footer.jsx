@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { FaEgg, FaTimes } from "react-icons/fa";
+import { cvData } from "../data/cvData";
 
 export default function Footer() {
   const [showEgg, setShowEgg] = useState(false);
+  const { hero } = cvData;
 
   return (
     <footer className="relative bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 text-gray-300 py-8 text-center text-sm overflow-hidden">
@@ -15,7 +17,7 @@ export default function Footer() {
       <div className="relative z-10">
         <div className="max-w-4xl mx-auto">
           <p className="text-base text-gray-200 font-medium">
-            © {new Date().getFullYear()} Juan Pablo Palomares Ávila. Todos los derechos reservados.
+            © {new Date().getFullYear()} {hero.name}. Todos los derechos reservados.
           </p>
         </div>
       </div>
@@ -54,6 +56,10 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
                 <div><strong className="text-green-400">JavaScript:</strong> Año dinámico generado con <code className="bg-gray-700 px-1 rounded">new Date().getFullYear()</code></div>
+              </li>
+               <li className="flex items-start gap-3">
+                <span className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></span>
+                <div><strong className="text-yellow-400">Datos Dinámicos:</strong> Nombre cargado desde `cvData.js`</div>
               </li>
             </ul>
           </div>

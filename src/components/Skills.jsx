@@ -16,6 +16,11 @@ import {
   FaTachometerAlt,
   FaCode,
   FaTools,
+  FaMobileAlt,
+  FaNetworkWired,
+  FaCubes,
+  FaBolt,
+  FaCheckCircle
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -38,12 +43,49 @@ import {
   SiJira,
   SiNotion,
   SiOpenai,
+  SiKubernetes,
+  SiHelm,
+  SiJenkins,
+  SiGitlab,
+  SiApachemaven,
+  SiSelenium,
+  SiMicrosoftsqlserver
 } from "react-icons/si";
 import FormacionComplementaria from "./FormacionComplementaria";
+import { cvData } from "../data/cvData";
+
+// Icon Map
+const iconMap = {
+  FaJava, FaReact, FaNodeJs, FaHtml5, FaServer, FaGitAlt, FaProjectDiagram, FaRobot, FaCogs, FaUserShield, FaTachometerAlt, FaCode, FaTools, FaMobileAlt, FaNetworkWired, FaCubes, FaBolt, FaCheckCircle,
+  SiTypescript, SiJavascript, SiTailwindcss, SiExpress, SiSpring, SiFirebase, SiPostgresql, SiMysql, SiOracle, SiMongodb, SiJunit5, SiCypress, SiEslint, SiDocker, SiGithubactions, SiVite, SiNginx, SiJira, SiNotion, SiOpenai, SiKubernetes, SiHelm, SiJenkins, SiGitlab, SiApachemaven, SiSelenium, SiMicrosoftsqlserver
+};
+
+const categoryTitles = {
+  languages: "Lenguajes",
+  frontend: "Frontend Moderno",
+  mobile: "Desarrollo Móvil",
+  architecture: "Arquitectura",
+  cloud: "Contenerización y Orquestación",
+  database: "Bases de Datos",
+  devops: "DevOps y CI/CD",
+  testing: "Calidad y Testing"
+};
+
+const categoryColors = {
+  languages: "from-orange-400 to-red-400",
+  frontend: "from-blue-400 to-cyan-400",
+  mobile: "from-purple-400 to-indigo-400",
+  architecture: "from-green-400 to-emerald-400",
+  cloud: "from-cyan-400 to-blue-500",
+  database: "from-yellow-400 to-orange-400",
+  devops: "from-purple-400 to-pink-400",
+  testing: "from-red-400 to-pink-400"
+};
 
 export default function SkillsSection() {
   const [showEgg, setShowEgg] = useState(false);
   const [showFormacion, setShowFormacion] = useState(false);
+  const { skills } = cvData;
 
   return (
     <section className="relative bg-gradient-to-br from-slate-900 via-gray-800 to-slate-900 py-18 px-6 overflow-hidden">
@@ -68,220 +110,30 @@ export default function SkillsSection() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-white">
-          {/* Columna izquierda */}
-          <div className="space-y-6">
-          {/* Lenguajes y frameworks */}
-          <div className="bg-gradient-to-br from-gray-800/60 to-gray-700/60 backdrop-blur-xl border border-gray-600/30 rounded-3xl p-6 shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
-                Lenguajes y frameworks
-              </h3>
-              <ul className="grid grid-cols-2 gap-2 text-base">
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaJava className="text-xl" />
-                  <span>Java (Spring Boot, JavaFX)</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiTypescript className="text-xl" />
-                  <span>TypeScript</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiJavascript className="text-xl" />
-                  <span>JavaScript</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaHtml5 className="text-xl" />
-                  <span>HTML5 / CSS3</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaReact className="text-xl" />
-                  <span>React</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaNodeJs className="text-xl" />
-                  <span>Node.js</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiTailwindcss className="text-xl" />
-                  <span>Tailwind CSS</span>
-                </li>
-              </ul>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
+           {Object.entries(skills).map(([categoryInfo, items]) => {
+              const title = categoryTitles[categoryInfo] || categoryInfo;
+              const colorClass = categoryColors[categoryInfo] || "from-gray-400 to-gray-500";
 
-            {/* Backend y APIs */}
-            <div className="bg-gradient-to-br from-gray-800/60 to-gray-700/60 backdrop-blur-xl border border-gray-600/30 rounded-3xl p-6 shadow-2xl hover:shadow-green-500/10 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Backend y APIs
-              </h3>
-              <ul className="space-y-2 text-base">
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaServer className="text-xl" />
-                  <span>REST APIs</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiExpress className="text-xl" />
-                  <span>Express</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiSpring className="text-xl" />
-                  <span>Spring MVC</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiFirebase className="text-xl" />
-                  <span>Firebase (Auth, Firestore, Hosting)</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Bases de datos */}
-            <div className="bg-gradient-to-br from-gray-800/60 to-gray-700/60 backdrop-blur-xl border border-gray-600/30 rounded-3xl p-6 shadow-2xl hover:shadow-blue-500/10 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                Bases de datos
-              </h3>
-              <ul className="grid grid-cols-2 gap-2 text-base">
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiPostgresql className="text-xl" />
-                  <span>PostgreSQL</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiMysql className="text-xl" />
-                  <span>MySQL</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiOracle className="text-xl" />
-                  <span>Oracle</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiFirebase className="text-xl" />
-                  <span>Firebase Realtime/Firestore</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiMongodb className="text-xl" />
-                  <span>MongoDB</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Testing y calidad */}
-            <div className="bg-gradient-to-br from-gray-800/60 to-gray-700/60 backdrop-blur-xl border border-gray-600/30 rounded-3xl p-6 shadow-2xl hover:shadow-purple-500/10 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent">
-                Testing y Calidad
-              </h3>
-              <ul className="grid grid-cols-2 gap-2 text-base">
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiJunit5 className="text-xl" />
-                  <span>JUnit 5</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiCypress className="text-xl" />
-                  <span>Cypress</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaCode className="text-xl" />
-                  <span>Clean Code</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaTools className="text-xl" />
-                  <span>Refactoring</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiEslint className="text-xl" />
-                  <span>ESLint / Prettier</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Columna derecha */}
-          <div className="space-y-6">
-            {/* DevOps y despliegue */}
-            <div className="bg-gradient-to-br from-gray-800/60 to-gray-700/60 backdrop-blur-xl border border-gray-600/30 rounded-3xl p-6 shadow-2xl hover:shadow-purple-500/10 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
-                DevOps y Despliegue
-              </h3>
-              <ul className="grid grid-cols-2 gap-2 text-base">
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiDocker className="text-xl" />
-                  <span>Docker</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaGitAlt className="text-xl" />
-                  <span>Git & GitHub</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiGithubactions className="text-xl" />
-                  <span>CI/CD</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiVite className="text-xl" />
-                  <span>Vite</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiNginx className="text-xl" />
-                  <span>Nginx</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Metodologías y gestión */}
-            <div className="bg-gradient-to-br from-gray-800/60 to-gray-700/60 backdrop-blur-xl border border-gray-600/30 rounded-3xl p-6 shadow-2xl hover:shadow-green-500/10 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Metodologías y Gestión
-              </h3>
-              <ul className="space-y-2 text-base">
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaProjectDiagram className="text-xl" />
-                  <span>Scrum / Agile</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiJira className="text-xl" />
-                  <span>Jira</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiNotion className="text-xl" />
-                  <span>Notion / Trello</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* IA y asistencia */}
-            <div className="bg-gradient-to-br from-gray-800/60 to-gray-700/60 backdrop-blur-xl border border-gray-600/30 rounded-3xl p-6 shadow-2xl hover:shadow-orange-500/10 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                IA &amp; Asistencia
-              </h3>
-              <ul className="space-y-2 text-base">
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaRobot className="text-xl" />
-                  <span>GitHub Copilot</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <SiOpenai className="text-xl" />
-                  <span>ChatGPT / Claude / Codex</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaCogs className="text-xl" />
-                  <span>Automatización con IA</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Otros */}
-            <div className="bg-gradient-to-br from-gray-800/60 to-gray-700/60 backdrop-blur-xl border border-gray-600/30 rounded-3xl p-6 shadow-2xl hover:shadow-red-500/10 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
-                Otros
-              </h3>
-              <ul className="space-y-2 text-base">
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaTachometerAlt className="text-xl" />
-                  <span>Paneles tipo Dashy / Heimdall</span>
-                </li>
-                <li className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                  <FaUserShield className="text-xl" />
-                  <span>Control de acceso (Spring Security, OAuth2)</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+              return (
+                <div key={categoryInfo} className="bg-gradient-to-br from-gray-800/60 to-gray-700/60 backdrop-blur-xl border border-gray-600/30 rounded-3xl p-6 shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300">
+                  <h3 className={`text-xl font-bold mb-4 bg-gradient-to-r ${colorClass} bg-clip-text text-transparent capitalize`}>
+                    {title}
+                  </h3>
+                  <ul className="grid grid-cols-2 gap-2 text-base">
+                    {items.map((skill, idx) => {
+                       const IconComponent = iconMap[skill.icon] || FaCode;
+                       return (
+                        <li key={idx} className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
+                          <IconComponent className="text-xl" />
+                          <span>{skill.name}</span>
+                        </li>
+                       );
+                    })}
+                  </ul>
+                </div>
+              );
+           })}
         </div>
       </div>
 
@@ -299,7 +151,7 @@ export default function SkillsSection() {
         <FaEgg className="text-lg" />
       </button>
 
-      {/* Easter Egg Modal - ACTUALIZADO */}
+      {/* Easter Egg Modal */}
       {showEgg && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 text-white p-8 rounded-2xl max-w-lg shadow-2xl relative">
@@ -317,25 +169,9 @@ export default function SkillsSection() {
                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
                 <div><strong className="text-blue-400">React:</strong> Componente funcional con `useState` para gestionar modales</div>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
-                <div><strong className="text-purple-400">Tailwind CSS:</strong> Grid responsive, gradientes, glassmorphism y efectos hover</div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-pink-400 rounded-full mt-2 flex-shrink-0"></span>
-                <div><strong className="text-pink-400">Elementos de fondo:</strong> Círculos blur animados con diferentes delays</div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
-                <div><strong className="text-green-400">Ventanas modales:</strong> Formación Complementaria se abre con el mismo diseño que Proyectos Destacados</div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></span>
-                <div><strong className="text-cyan-400">Iconos:</strong> `react-icons` para representar tecnologías</div>
-              </li>
-              <li className="flex items-start gap-3">
+               <li className="flex items-start gap-3">
                 <span className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></span>
-                <div><strong className="text-yellow-400">Easter Egg:</strong> Botón flotante que muestra esta explicación</div>
+                <div><strong className="text-yellow-400">Datos Dinámicos:</strong> Habilidades renderizadas desde `cvData.js`</div>
               </li>
             </ul>
           </div>
