@@ -38,17 +38,17 @@ const TechBadge = ({ children, icon: Icon }) => (
 );
 
 const FeatureSection = ({ title, description, image, reverse = false }) => (
-  <div className={`grid md:grid-cols-2 gap-8 items-center mb-12 ${reverse ? 'md:grid-flow-col-dense' : ''}`}>
-    <div className={reverse ? 'md:col-start-2' : ''}>
+  <div className={`flex flex-col md:flex-row gap-8 items-center mb-16 ${reverse ? 'md:flex-row-reverse' : ''}`}>
+    <div className="flex-1 w-full">
       <h3 className="text-2xl font-black bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">{title}</h3>
-      <p className="text-gray-300 text-base leading-relaxed font-medium bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-xl border border-gray-600/20 rounded-xl p-4 shadow-lg">{description}</p>
+      <p className="text-gray-300 text-base leading-relaxed font-medium bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-xl border border-gray-600/20 rounded-xl p-6 shadow-lg">{description}</p>
     </div>
-    <div className={`${reverse ? 'md:col-start-1' : ''} relative group`}>
+    <div className="flex-1 w-full relative group">
       <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
       <img 
         src={image} 
         alt={title}
-        className="relative rounded-xl shadow-xl w-full h-64 object-cover transition-all duration-300 group-hover:scale-105 border border-white/10"
+        className="relative rounded-xl shadow-xl w-full h-auto object-cover transition-all duration-300 group-hover:scale-[1.02] border border-white/10"
       />
     </div>
   </div>
