@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/CVreact/', // 👈 muy importante para GitHub Pages
+  base: './', // 👈 Ruta relativa, funciona mejor con HashRouter
   build: {
     target: 'esnext',
     outDir: 'dist'
