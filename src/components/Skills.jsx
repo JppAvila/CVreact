@@ -103,10 +103,10 @@ export default function SkillsSection() {
           </h2>
           <button
             onClick={() => setShowFormacion(true)}
-            className="group flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-indigo-500/25 hover:scale-105 self-center md:self-auto"
+            className="group flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25 hover:scale-105 self-center md:self-auto ring-1 ring-white/20"
           >
-            <FaGraduationCap className="text-purple-200 group-hover:text-white transition-colors" />
-            Formación Complementaria 📚
+            <FaGraduationCap className="text-cyan-200 group-hover:text-white transition-colors text-xl" />
+            Certificaciones y Cursos 🏅
           </button>
         </div>
 
@@ -172,6 +172,10 @@ export default function SkillsSection() {
                <li className="flex items-start gap-3">
                 <span className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></span>
                 <div><strong className="text-yellow-400">Datos Dinámicos:</strong> Habilidades renderizadas desde `cvData.js`</div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></span>
+                <div><strong className="text-cyan-400">Extra:</strong> El modal de formación usa <strong>Framer Motion</strong> para transiciones fluidas.</div>
               </li>
             </ul>
           </div>

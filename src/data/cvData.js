@@ -113,13 +113,108 @@ export const cvData = {
     ]
   },
   complementaryEducation: [
-    "Desarrollo Web Completo con HTML5, CSS3, JS, AJAX, PHP y MySQL - UDEMY",
-    "JavaScript Moderno - Guía Definitiva (Construcción de +20 Proyectos) - UDEMY",
-    "Curso de Linux - Todo lo necesario para ser administrador - UDEMY",
-    "Spring Boot y Microservicios",
-    "Testing en Java con JUnit 5",
-    "Docker y CI/CD para desarrolladores",
-    "Refactoring y Clean Code"
+    {
+      title: "Aplicaciones web con Web Components, Lit Element y Stenciljs",
+      issuer: "Udemy",
+      date: "Oct. 2025",
+      id: "UC-488720f6-9d51-46f9-96c4-2ff578756438",
+      url: "https://www.udemy.com/certificate/UC-488720f6-9d51-46f9-96c4-2ff578756438/"
+    },
+    {
+      title: "Apache Kafka con Java, Spring framework, Elasticsearch y AWS",
+      issuer: "Udemy",
+      date: "Ago. 2025",
+      id: "UC-4fde04fa-b09e-4216-a757-cac772210845",
+      url: "https://www.udemy.com/certificate/UC-4fde04fa-b09e-4216-a757-cac772210845/"
+    },
+    {
+      title: "Construye aplicaciones web Spring Framework 6 y Spring Boot 3",
+      issuer: "Udemy",
+      date: "Ago. 2025",
+      id: "UC-36c04b0c-66ac-4603-9b54-1332e42c1c53",
+      url: "https://www.udemy.com/certificate/UC-36c04b0c-66ac-4603-9b54-1332e42c1c53/"
+    },
+    {
+      title: "Conecta tu aplicación Spring Boot con otros microservicios (OpenFeign)",
+      issuer: "OpenWebinars",
+      date: "Feb. 2025",
+      url: "https://openwebinars.net/certificados/"
+    },
+    {
+      title: "Curso de Jira: Funcionalidades y gestión de proyectos Agile",
+      issuer: "OpenWebinars",
+      date: "Feb. 2025",
+      url: "https://openwebinars.net/certificados/"
+    },
+    {
+      title: "Curso de Selenium con Java para principiantes",
+      issuer: "OpenWebinars",
+      date: "Feb. 2025",
+      url: "https://openwebinars.net/certificados/"
+    },
+    {
+      title: "Curso de técnicas de Refactoring y Clean Code",
+      issuer: "OpenWebinars",
+      date: "Feb. 2025",
+      url: "https://openwebinars.net/certificados/"
+    },
+    {
+      title: "Desarrollo Web Completo con HTML5, CSS3, JS AJAX PHP y MySQL",
+      issuer: "Udemy",
+      date: "Feb. 2025",
+      id: "UC-b17d5af2-f0d7-470a-9a7e-523ad5fa9663",
+      url: "https://www.udemy.com/certificate/UC-b17d5af2-f0d7-470a-9a7e-523ad5fa9663/"
+    },
+    {
+      title: "Dominando ChatGPT con la API de OpenAI",
+      issuer: "OpenWebinars",
+      date: "Feb. 2025",
+      url: "https://openwebinars.net/certificados/"
+    },
+    {
+      title: "Incluye seguridad en tus microservicios con Spring Cloud Gateway",
+      issuer: "OpenWebinars",
+      date: "Feb. 2025",
+      url: "https://openwebinars.net/certificados/"
+    },
+    {
+      title: "Introducción a los microservicios con Spring Cloud",
+      issuer: "OpenWebinars",
+      date: "Feb. 2025",
+      url: "https://openwebinars.net/certificados/"
+    },
+    {
+      title: "Curso Maestro de Python: De cero a programador todoterreno",
+      issuer: "Udemy",
+      date: "Dic. 2024",
+      id: "UC-10d33536-34e5-4611-b5aa-a5cae157db97",
+      url: "https://www.udemy.com/certificate/UC-10d33536-34e5-4611-b5aa-a5cae157db97/"
+    },
+    {
+      title: "Curso de Testing en Java con JUnit 5",
+      issuer: "OpenWebinars",
+      date: "Jun. 2024",
+      url: "https://openwebinars.net/certificados/"
+    },
+    {
+      title: "Curso de jQuery",
+      issuer: "OpenWebinars",
+      date: "Jun. 2024",
+      url: "https://openwebinars.net/certificados/"
+    },
+    {
+      title: "Programación asíncrona con promises en JavaScript",
+      issuer: "OpenWebinars",
+      date: "Jun. 2024",
+      url: "https://openwebinars.net/certificados/"
+    },
+    {
+      title: "JavaScript Moderno Guía Definitiva Construye +20 Proyectos",
+      issuer: "Udemy",
+      date: "Mar. 2024",
+      id: "UC-7598eca0-704d-4590-ad33-35e9ad75d56f",
+      url: "https://www.udemy.com/certificate/UC-7598eca0-704d-4590-ad33-35e9ad75d56f/"
+    }
   ],
   projects: [
     {
