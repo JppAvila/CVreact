@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { FaEgg, FaGraduationCap, FaTimes, FaRocket } from "react-icons/fa";
+import { FaEgg, FaGraduationCap, FaTimes, FaTasks, FaLeaf, FaGamepad, FaChevronRight } from "react-icons/fa";
 import Modal from "./Modal";
 import diploma from "../assets/images/diploma.png";
 import profile from "../assets/images/profile.png";
+
 import { Link } from "react-router-dom";
 import { cvData } from "../data/cvData";
 
@@ -19,9 +20,68 @@ export default function About() {
         <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center z-10">
-        {/* Columna izquierda - Imagen y botones */}
-        <div className="flex flex-col items-center space-y-6">
+      <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center z-10">
+        
+        {/* Columna 1 (Izquierda) - Showcase de Apps */}
+        <div className="order-2 lg:order-1 w-full">
+           <div className="w-full bg-gray-800/40 backdrop-blur-md border border-gray-700/50 rounded-2xl p-5 shadow-xl">
+              <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4 text-center">
+                Aplicaciones Propias
+              </h3>
+              <div className="space-y-3">
+                <Link 
+                  to="/flowtask"
+                  className="group flex items-center justify-between p-3 bg-gradient-to-r from-gray-800 to-gray-800 hover:from-cyan-900/40 hover:to-blue-900/40 border border-gray-700 hover:border-cyan-500/50 rounded-xl transition-all duration-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.15)] group relative overflow-hidden"
+                >
+                  <div className="flex items-center gap-3 relative z-10">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <FaTasks size={18} />
+                    </div>
+                    <div>
+                      <span className="block font-bold text-gray-200 group-hover:text-cyan-300 transition-colors">FlowTask</span>
+                      <span className="text-[10px] text-gray-400 uppercase font-bold tracking-wide">Web App</span>
+                    </div>
+                  </div>
+                  <FaChevronRight className="text-gray-600 group-hover:text-cyan-400 transform group-hover:translate-x-1 transition-all" size={12} />
+                </Link>
+
+                <Link 
+                  to="/nutriplan"
+                  className="group flex items-center justify-between p-3 bg-gradient-to-r from-gray-800 to-gray-800 hover:from-green-900/40 hover:to-emerald-900/40 border border-gray-700 hover:border-green-500/50 rounded-xl transition-all duration-300 hover:shadow-[0_0_15px_rgba(34,197,94,0.15)] relative overflow-hidden"
+                >
+                   <div className="flex items-center gap-3 relative z-10">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <FaLeaf size={18} />
+                    </div>
+                    <div>
+                      <span className="block font-bold text-gray-200 group-hover:text-green-300 transition-colors">NutriPlan</span>
+                      <span className="text-[10px] text-gray-400 uppercase font-bold tracking-wide">Mobile / Flutter</span>
+                    </div>
+                  </div>
+                  <FaChevronRight className="text-gray-600 group-hover:text-green-400 transform group-hover:translate-x-1 transition-all" size={12} />
+                </Link>
+
+                <Link 
+                  to="/nemesis2k"
+                  className="group flex items-center justify-between p-3 bg-gradient-to-r from-gray-800 to-gray-800 hover:from-red-900/40 hover:to-orange-900/40 border border-gray-700 hover:border-red-500/50 rounded-xl transition-all duration-300 hover:shadow-[0_0_15px_rgba(239,68,68,0.15)] relative overflow-hidden"
+                >
+                   <div className="flex items-center gap-3 relative z-10">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-red-600 to-orange-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <FaGamepad size={18} />
+                    </div>
+                    <div>
+                      <span className="block font-bold text-gray-200 group-hover:text-red-300 transition-colors">Nemesis 2K</span>
+                      <span className="text-[10px] text-gray-400 uppercase font-bold tracking-wide">Gaming Utility</span>
+                    </div>
+                  </div>
+                  <FaChevronRight className="text-gray-600 group-hover:text-red-400 transform group-hover:translate-x-1 transition-all" size={12} />
+                </Link>
+              </div>
+            </div>
+        </div>
+
+        {/* Columna 2 (Centro) - Foto y Formación */}
+        <div className="order-1 lg:order-2 flex flex-col items-center space-y-6">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
             <img
@@ -34,26 +94,17 @@ export default function About() {
           <div className="flex flex-col gap-3 w-full max-w-xs">
             <button
               onClick={() => setShowDiploma(true)}
-              className="group relative overflow-hidden flex items-center justify-center gap-3 px-5 py-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 hover:from-indigo-700 hover:via-purple-700 hover:to-indigo-700 text-white rounded-xl font-bold transition-all duration-300 shadow-xl hover:shadow-indigo-500/30 hover:scale-105 border border-indigo-400/20"
+              className="w-full group relative overflow-hidden flex items-center justify-center gap-3 px-5 py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 hover:from-indigo-700 hover:via-purple-700 hover:to-indigo-700 text-white rounded-2xl font-bold transition-all duration-300 shadow-xl hover:shadow-indigo-500/30 hover:scale-[1.02] border border-indigo-400/20"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              <FaGraduationCap className="text-yellow-300 text-lg group-hover:text-yellow-200 transition-colors relative z-10" />
-              <span className="relative z-10">Formación Académica</span>
+              <FaGraduationCap className="text-yellow-300 text-xl group-hover:text-yellow-200 transition-colors relative z-10" />
+              <span className="relative z-10 text-lg">Formación Académica</span>
             </button>
-
-            <Link
-              to="/flowtask"
-              className="group relative overflow-hidden flex items-center justify-center gap-3 px-5 py-3 bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 hover:from-orange-600 hover:via-red-600 hover:to-orange-600 text-white rounded-xl font-bold transition-all duration-300 shadow-xl hover:shadow-orange-500/30 hover:scale-105 border border-orange-400/20"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              <FaRocket className="text-orange-200 text-lg group-hover:text-white transition-colors relative z-10" />
-              <span className="relative z-10">Aplicaciones Propias</span>
-            </Link>
           </div>
         </div>
 
-        {/* Columna derecha - Texto */}
-        <div className="text-left space-y-6">
+        {/* Columna 3 (Derecha) - Texto Sobre mí */}
+        <div className="order-3 lg:order-3 text-left space-y-6">
           <h2 className="text-4xl font-black bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
             Sobre mí
           </h2>
